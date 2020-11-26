@@ -1,6 +1,6 @@
 import React from "react";
 
-function DisplayComponent(props) {
+function Display(props) {
   const h = () => {
     if (props.time.h === 0) {
       return "";
@@ -22,4 +22,4 @@ function DisplayComponent(props) {
   );
 }
 
-export default DisplayComponent;
+export default Display;

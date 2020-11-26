@@ -1,6 +1,6 @@
 import React from "react";
 
-function BtnComponent(props) {
+function Btn(props) {
   return (
     <div>
       {props.status === 0 ? (
@@ -55,4 +55,4 @@ function BtnComponent(props) {
   );
 }
 
-export default BtnComponent;
+export default Btn;
