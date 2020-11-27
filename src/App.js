@@ -1,20 +1,17 @@
 import React, { useState } from "react";
-import Display from "./Components/Show";
-import Btn from "./Components/Button";
+import Show from "./Components/Show";
+import Btn from "./Components/BtnDisplay";
 import "./App.css";
 
 function App() {
   const [time, setTime] = useState({ ms: 0, s: 0, m: 0, h: 0 });
   const [timer, setTimer] = useState();
   const [status, setStatus] = useState(0);
-  // Not started = 0
-  // started = 1
-  // stopped = 2
 
   const start = () => {
-    run();
+    stopwatch();
     setStatus(1);
-    setTimer(setInterval(run, 10));
+    setTimer(setInterval(stopwatch, 10));
   };
 
   var newMs = time.ms,
@@ -22,7 +19,7 @@ function App() {
     newM = time.m,
     newH = time.h;
 
-  const run = () => {
+  const stopwatch = () => {
     if (newM === 60) {
       newH++;
       newM = 0;
@@ -51,18 +48,17 @@ function App() {
   };
 
   const resume = () => start();
-
   return (
     <div className="main-section">
       <div className="clock-holder">
         <div className="stopwatch">
-          <Display time={time} />
+          <Show time={time} />
           <Btn
-            status={status}
-            resume={resume}
-            reset={reset}
-            stop={stop}
             start={start}
+            stop={stop}
+            resume={resume}
+            status={status}
+            reset={reset}
           />
         </div>
       </div>

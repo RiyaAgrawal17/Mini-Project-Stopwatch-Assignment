@@ -8,6 +8,7 @@ function Btn(props) {
           className="stopwatch-btn stopwatch-btn-gre"
           onClick={props.start}
         >
+          {" "}
           Start
         </button>
       ) : (
@@ -39,7 +40,7 @@ function Btn(props) {
             className="stopwatch-btn stopwatch-btn-gre"
             onClick={props.resume}
           >
-            Resume
+            Resume{" "}
           </button>
           <button
             className="stopwatch-btn stopwatch-btn-yel"
